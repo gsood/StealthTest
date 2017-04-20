@@ -20,7 +20,10 @@ class CafeMenuSpec extends WordSpecLike with Matchers {
 
   "Cafe Menu billing" should {
     "generate correct bill amount for two coffees and one Cola" in {
-      CafeMenu.generateBill(List("Coffee", "Coffee", "Cola")) should be (350)
+      CafeMenu.generateBill(List("Coffee", "Coffee", "Cola")) should be ("2.5")
+    }
+    "generate correct bill amount for one coffees,  one Cola and one Cheese Sandwich" in {
+      CafeMenu.generateBill(List("Coffee", "Cheese Sandwich", "Cola")) should be ("3.5")
     }
   }
 
